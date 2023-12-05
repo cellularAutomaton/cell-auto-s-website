@@ -3,28 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Silly Website</title>
+    <title>Lincoln Domina - I honestly would just call it my name</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Silly Website</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="aliens.html">Aliens</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="home">
-            <h2>Welcome to Silly Website!</h2>
-            <p>This is the home page of our silly website. Enjoy some random silliness!</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Silly Website</p>
-    </footer>
+    <div class="main-container">
+            <header>
+		<div id="tuning-diagram"></div> <!-- p5.js canvas will fill this -->
+		<h6 style="text-align:center">(Click to play sound)</h6>
+	    </header>
+
+	    <nav>
+		<ul>
+		    <li><a href="#music">Music Soundtracks</a></li>
+		    <li><a href="#experiments">Musical Experiments</a></li>
+		    <li><a href="#coding">Creative Coding</a></li>
+		    <li><a href="#about">About</a></li>
+		    <li><a href="#contact">Contact</a></li>
+		</ul>
+	    </nav>
+    
+	    <section id="music">
+		<h2>Music Soundtracks</h2>
+		<ul>
+		    <li>
+			<a href="https://celestestrawberryjam.bandcamp.com/album/strawberry-jams-vol-1">Azure Caverns</a>
+			<p>Adaptive soundtrack to part of a mod for Celeste.</p>
+		    </li>
+		    <li>HyperRogue</li>
+		    <ul>
+			<li>
+			    <a href="https://hyperrogue.miraheze.org/wiki/File:Hr-domina-hunting.ogg">Hunting Grounds</a>
+			</li>
+			<li>
+			    <a href="https://hyperrogue.miraheze.org/wiki/File:Hr-domina-mountain.ogg">Lost Mountain</a>
+			</li>
+		    </ul>
+		    <p>Two tracks for the non-Euclidean roguelike Hyperrogue.</p>
+		    <li>
+			<a href="https://cellularautomaton.bandcamp.com/track/floresta">Floresta</a>
+			<p>Unpolished atmospheric track for a Discord-based role playing campaign.</p>
+		    </li>
+		</ul>
+		<p>Stay tuned for the addition of tracks from the Celeste Beginner Collab and Secret Santa Collab 2024.</p>
+	    </section>
+
+	    <section id="experiments">
+		<ul>
+		    <li>Drift</li>
+		    <li>17edo song a day project</li>
+		    <li>animalcules</li>
+		    <li>Coming soon: Ecesis, with laboratory x</li>
+		</ul>
+		<p>A list of musical experiments.</p>
+	    </section>
+
+	    <section id="coding">
+		<h2>Creative Coding</h2>
+		<a href="https://nbviewer.org/url/cellularautomaton.github.io/cell-auto-s-website/AllRhythmsFinal.ipynb">all rhythms final</a>
+	    </section>
+
+	<section id="about">
+	    <h2>About</h2>
+	    <div class="about-content">  <!-- Added a wrapper div for flexbox layout -->
+		<img src="img/Glider.png" alt="Glider">
+		<div class="about-text"> <!-- Wrapped the text inside a div -->
+		As a composer, I'm influenced by video game soundtracks and ambient and experimental music. I'm particularly interested in xenharmony, a branch of music that explores scales and intervals outside of Western norms. One of the hallmarks of my work is "xenmodality", where I merge modal harmonic styles with xenharmonic systems. My compositions often result from in-depth exploration of specific tunings.
+		</div>
+	    </div>
+	</section>
+
+
+	    <section id="contact">
+		<h2>Get in Touch</h2>
+		<p>Todo: figure out contact form.</p>
+	    </section>
+    </div>
+    <script src="sketch.js"></script>
 </body>
 </html>
+

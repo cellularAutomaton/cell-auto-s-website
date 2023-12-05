@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literate Coding Article</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ecf0f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        article {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 1em;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .explanation, .code, .audio-example {
+            margin: 1em 0;
+        }
+
+        .explanation {
+            background-color: #f4f4f4;
+            padding: 1em;
+            border-left: 4px solid #2c3e50;
+        }
+
+        .code {
+            background-color: #282c34;
+            border-left: 4px solid #2cDe50;
+        }
+
+        .audio-example {
+            background-color: #dfe6e9;
+            padding: 1em;
+            border-left: 4px solid #2980b9;
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
+
+        audio {
+            flex: 1;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 850px) {
+            article {
+                margin: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <section class="explanation">
+            <p>Your explanation here...</p>
+        </section>
+        <section class="code">
+            <pre><code class="language-python">from scamp import *
+import random
+
+s = Session(tempo=15)
+
+s.fast_forward_in_beats(5000)
+player = s.new_midi_part("midi through")
+
+
+phrase_rhythms = [
+    [1] * 2,
+    [1.989893]
+]
+
+def random_improv(inst, start_pitch, skew=0.8, pitch_range=(44, 78)):
+    pitch = start_pitch
+    directionality = 1
+    while True:
+        for dur in random.choice(phrase_rhythms):
+            volume = 1
+            player.play_note(pitch, volume, dur)
+            directionality *= random.choices([1, -1], weights=(skew, 1 - skew))[0]
+            if pitch < pitch_range[0]:
+                directionality = 1
+            elif pitch > pitch_range[1]:
+                directionality = -1
+            pitch += directionality * random.choices([0, 5.0323, 6.9677])[0]
+#         pitch = (pitch - pitch_range[0]) % (pitch_range[1] - pitch_range[0]) + pitch_range[0]
+
+for i in range(7):
+    fork(random_improv, args=(player, 62))
+wait_for_children_to_finish()</code></pre>
+        </section>
+        <section class="audio-example">
+            <audio controls>
+                <source src="path_to_audio_file.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p>Audio description or notes...</p>
+        </section>
+        <!-- Repeat sections as necessary -->
+    </article>
+
+    <!-- Prism JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
+</body>
+</html>
+

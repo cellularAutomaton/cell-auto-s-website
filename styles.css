@@ -1,0 +1,83 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cormorant Garamond', sans-serif;
+    font-size: 110%;
+    background-image: url('img/bgtiling.png'); /* Replace with your tiling pattern image path */
+    background-repeat: repeat;
+}
+
+.main-container {
+    width: 63%; /* or whatever max width you prefer */
+    margin: 0 auto; /* centers the container */
+    background-color: white; /* or any other color to contrast the tiling background */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* optional: for a subtle shadow effect */
+}
+
+@media screen and (max-width: 767px) {
+    .main-container {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+header {
+    width: 100%;
+    height: auto; /* Adjust height as needed */
+}
+
+ul {
+    list-style-image: url('img/tuningsymbol.png');
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    list-style-image: none;
+    padding: 10px 0;
+    margin: 0;
+    background-color: #f2f2f2;
+    flex-wrap: wrap;
+}
+
+nav li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+}
+
+section {
+    padding: 20px 80px;
+    text-align: left;
+    border-bottom: 2px solid #000;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#about .about-content {
+    display: flex;
+    align-items: start;
+    gap: 50px; /* Optional: to add some space between the image and text */
+}
+
+#about img {
+    max-width: 40%;  /* Updated to make the image smaller */
+    max-height: 200px;  /* Updated to limit the image’s height */
+    height: auto;
+    object-fit: cover; /* Makes the image cover the assigned area without stretching */
+}
+
+#about .about-text {
+    flex-grow: 1; /* Allows the text to take up the remaining space */
+}
+
+
