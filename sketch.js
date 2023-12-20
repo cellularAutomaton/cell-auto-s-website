@@ -25,7 +25,9 @@ function setup() {
 
     initializeLetters();
     userStartAudio().then(function() {
+      // hide the html element "(click to start audio)"
       audioStarted = true;
+      document.getElementById('click-for-sound').style.display = 'none';
     });
 }
 
@@ -35,11 +37,6 @@ function draw() {
     for (let letter of letters) {
         letter.display();
         letter.checkHover(mouseX, mouseY);
-    }
-    
-    if (!audioStarted) {
-        textSize(10);
-        text("(Click to play sound)", width/2, height * 0.8);
     }
     
 }
@@ -62,7 +59,7 @@ function initializeLetters() {
 
     for (let i = 0; i < name.length; i++) {
         let charWidth = textWidth(name[i]);
-        if (name[i] !== " ") { letters.push(new Letter(startX, fontSize * 1.5, name[i], charWidth)); } // Adjusted y-coordinate
+        if (name[i] !== " ") { console.log(name[i]); letters.push(new Letter(startX, fontSize * 1.5, name[i], charWidth)); } // Adjusted y-coordinate
         startX += charWidth + spacing;
     }
 }
