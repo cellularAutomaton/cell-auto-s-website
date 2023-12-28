@@ -57,6 +57,10 @@ h2 {
     text-align: center;
 }
 
+h6 {
+    margin: 0;
+}
+
 
 img {
     max-width: 100%;
