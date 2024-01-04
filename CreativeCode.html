@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Literate Coding Article</title>
+    <title>Disintegration</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" rel="stylesheet" />
 
     <style>
@@ -61,7 +61,7 @@
 <body>
     <article>
         <section class="explanation">
-            <p>Your explanation here...</p>
+            <p>This piece consists of 7 piano lines, each of which randomly moves up or down by fifths or fourths. Each part has a chance to skip a beat and then come in slightly early. Due to the desynchronization and to the drift around the circle of 5ths, the parts will disperse out over time. This is meant to be reminiscent of the 2nd law of thermodynamics. Video pending.`</p>
         </section>
         <section class="code">
             <pre><code class="language-python">from scamp import *
@@ -91,7 +91,6 @@ def random_improv(inst, start_pitch, skew=0.8, pitch_range=(44, 78)):
             elif pitch > pitch_range[1]:
                 directionality = -1
             pitch += directionality * random.choices([0, 5.0323, 6.9677])[0]
-#         pitch = (pitch - pitch_range[0]) % (pitch_range[1] - pitch_range[0]) + pitch_range[0]
 
 for i in range(7):
     fork(random_improv, args=(player, 62))
